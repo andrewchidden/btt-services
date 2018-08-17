@@ -1,0 +1,740 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		488774FF21262FC800685702 /* OCHamcrest.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 48AF8E0821262A8100EF5A6F /* OCHamcrest.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4887750021262FC800685702 /* OCMockito.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 48AF8E0921262A8100EF5A6F /* OCMockito.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4887761C212631CB00685702 /* NSDictionary+CTSCommandLineArguments.m in Sources */ = {isa = PBXBuildFile; fileRef = 48AF8E03212625A800EF5A6F /* NSDictionary+CTSCommandLineArguments.m */; };
+		4887761F2126324300685702 /* CTSEventKitService.m in Sources */ = {isa = PBXBuildFile; fileRef = 4887761E2126324300685702 /* CTSEventKitService.m */; };
+		488776202126324300685702 /* CTSEventKitService.m in Sources */ = {isa = PBXBuildFile; fileRef = 4887761E2126324300685702 /* CTSEventKitService.m */; };
+		48877623212634DF00685702 /* CTSBetterTouchToolWebServerConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 48877622212634DF00685702 /* CTSBetterTouchToolWebServerConfiguration.m */; };
+		48877624212634DF00685702 /* CTSBetterTouchToolWebServerConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 48877622212634DF00685702 /* CTSBetterTouchToolWebServerConfiguration.m */; };
+		488776272126379D00685702 /* NSURL+CTSBetterTouchToolWebServerEndpoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 488776262126379D00685702 /* NSURL+CTSBetterTouchToolWebServerEndpoint.m */; };
+		488776282126379D00685702 /* NSURL+CTSBetterTouchToolWebServerEndpoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 488776262126379D00685702 /* NSURL+CTSBetterTouchToolWebServerEndpoint.m */; };
+		4887762B212637F300685702 /* CTSBetterTouchToolWebServerConfigurationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 48877629212637F300685702 /* CTSBetterTouchToolWebServerConfigurationTests.m */; };
+		4887762E21263B7B00685702 /* NSURLCTSBetterTouchToolWebServerEndpointTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4887762C21263B7B00685702 /* NSURLCTSBetterTouchToolWebServerEndpointTests.m */; };
+		4887763221264F3E00685702 /* NSString+CTSReadableEventStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 4887763121264F3E00685702 /* NSString+CTSReadableEventStatus.m */; };
+		4887763321264F3E00685702 /* NSString+CTSReadableEventStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 4887763121264F3E00685702 /* NSString+CTSReadableEventStatus.m */; };
+		48877635212651F900685702 /* NSStringCTSReadableEventStatusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 48877634212651F900685702 /* NSStringCTSReadableEventStatusTests.m */; };
+		488776372126586600685702 /* CTSEventKitServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 488776362126586600685702 /* CTSEventKitServiceTests.m */; };
+		48AF8DF0212624C400EF5A6F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48AF8DEF212624C400EF5A6F /* main.m */; };
+		48AF8DFD212624E700EF5A6F /* NSDictionaryCTSCommandLineArgumentsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 48AF8DFC212624E700EF5A6F /* NSDictionaryCTSCommandLineArgumentsTests.m */; };
+		48AF8E04212625A800EF5A6F /* NSDictionary+CTSCommandLineArguments.m in Sources */ = {isa = PBXBuildFile; fileRef = 48AF8E03212625A800EF5A6F /* NSDictionary+CTSCommandLineArguments.m */; };
+		48AF8E0A21262A8100EF5A6F /* OCHamcrest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48AF8E0821262A8100EF5A6F /* OCHamcrest.framework */; };
+		48AF8E0B21262A8100EF5A6F /* OCMockito.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48AF8E0921262A8100EF5A6F /* OCMockito.framework */; };
+		48D0F8B421267A2E00D91348 /* NSURL+CTSBetterTouchToolWebServerEndpoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 488776262126379D00685702 /* NSURL+CTSBetterTouchToolWebServerEndpoint.m */; };
+		48D0F8B621267A2E00D91348 /* NSDictionary+CTSCommandLineArguments.m in Sources */ = {isa = PBXBuildFile; fileRef = 48AF8E03212625A800EF5A6F /* NSDictionary+CTSCommandLineArguments.m */; };
+		48D0F8B921267A2E00D91348 /* CTSBetterTouchToolWebServerConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 48877622212634DF00685702 /* CTSBetterTouchToolWebServerConfiguration.m */; };
+		48D0F8C021267A7500D91348 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D0F8B021267A1E00D91348 /* main.m */; };
+		48D0F8C3212687C300D91348 /* CTSVolumeService.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D0F8C2212687C300D91348 /* CTSVolumeService.m */; };
+		48D0F8C4212687C300D91348 /* CTSVolumeService.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D0F8C2212687C300D91348 /* CTSVolumeService.m */; };
+		48D0F8C721268DD200D91348 /* CTSVolumeServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D0F8C521268DD200D91348 /* CTSVolumeServiceTests.m */; };
+		48D0F8CB212690BA00D91348 /* CTSAudioToolboxVolumeServiceTestStub.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D0F8C9212690BA00D91348 /* CTSAudioToolboxVolumeServiceTestStub.m */; };
+		48F152B52126C18D0021D020 /* NSString+CTSSerializedVolumeStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F152B42126C18D0021D020 /* NSString+CTSSerializedVolumeStatus.m */; };
+		48F152B62126C18D0021D020 /* NSString+CTSSerializedVolumeStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F152B42126C18D0021D020 /* NSString+CTSSerializedVolumeStatus.m */; };
+		48F152B82126C2B90021D020 /* NSStringCTSSerializedVolumeStatusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F152B72126C2B90021D020 /* NSStringCTSSerializedVolumeStatusTests.m */; };
+		48F152BC2126DA770021D020 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F152BB2126DA770021D020 /* main.m */; };
+		48F152C12126DA7F0021D020 /* NSDictionary+CTSCommandLineArguments.m in Sources */ = {isa = PBXBuildFile; fileRef = 48AF8E03212625A800EF5A6F /* NSDictionary+CTSCommandLineArguments.m */; };
+		48F152CB2126DA9E0021D020 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F152BB2126DA770021D020 /* main.m */; };
+		48F152CE2126DEF30021D020 /* CTSControlStripService.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F152CD2126DEF30021D020 /* CTSControlStripService.m */; };
+		48F152CF2126DEF30021D020 /* CTSControlStripService.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F152CD2126DEF30021D020 /* CTSControlStripService.m */; };
+		48F153E82126E6E10021D020 /* CTSControlStripServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F153E72126E6E10021D020 /* CTSControlStripServiceTests.m */; };
+		48F153EB2126E8F50021D020 /* CTSAudioToolboxControlStripServiceTestStub.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F153EA2126E8F50021D020 /* CTSAudioToolboxControlStripServiceTestStub.m */; };
+		48F153EE2126EA4B0021D020 /* CTSCoreGraphicsEventControlStripServiceTestStub.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F153ED2126EA4B0021D020 /* CTSCoreGraphicsEventControlStripServiceTestStub.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		488774FE21262FBC00685702 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				488774FF21262FC800685702 /* OCHamcrest.framework in Copy Frameworks */,
+				4887750021262FC800685702 /* OCMockito.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48AF8DEA212624C400EF5A6F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		48D0F8BB21267A2E00D91348 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		48F152C62126DA7F0021D020 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		4887761D2126324300685702 /* CTSEventKitService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTSEventKitService.h; sourceTree = "<group>"; };
+		4887761E2126324300685702 /* CTSEventKitService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTSEventKitService.m; sourceTree = "<group>"; };
+		48877621212634DF00685702 /* CTSBetterTouchToolWebServerConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTSBetterTouchToolWebServerConfiguration.h; sourceTree = "<group>"; };
+		48877622212634DF00685702 /* CTSBetterTouchToolWebServerConfiguration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTSBetterTouchToolWebServerConfiguration.m; sourceTree = "<group>"; };
+		488776252126379D00685702 /* NSURL+CTSBetterTouchToolWebServerEndpoint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURL+CTSBetterTouchToolWebServerEndpoint.h"; sourceTree = "<group>"; };
+		488776262126379D00685702 /* NSURL+CTSBetterTouchToolWebServerEndpoint.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURL+CTSBetterTouchToolWebServerEndpoint.m"; sourceTree = "<group>"; };
+		48877629212637F300685702 /* CTSBetterTouchToolWebServerConfigurationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTSBetterTouchToolWebServerConfigurationTests.m; sourceTree = "<group>"; };
+		4887762C21263B7B00685702 /* NSURLCTSBetterTouchToolWebServerEndpointTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSURLCTSBetterTouchToolWebServerEndpointTests.m; sourceTree = "<group>"; };
+		4887762F2126476C00685702 /* CTSWeakify.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTSWeakify.h; sourceTree = "<group>"; };
+		4887763021264F3E00685702 /* NSString+CTSReadableEventStatus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+CTSReadableEventStatus.h"; sourceTree = "<group>"; };
+		4887763121264F3E00685702 /* NSString+CTSReadableEventStatus.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+CTSReadableEventStatus.m"; sourceTree = "<group>"; };
+		48877634212651F900685702 /* NSStringCTSReadableEventStatusTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSStringCTSReadableEventStatusTests.m; sourceTree = "<group>"; };
+		488776362126586600685702 /* CTSEventKitServiceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTSEventKitServiceTests.m; sourceTree = "<group>"; };
+		48AF8DEC212624C400EF5A6F /* eventkit-service */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "eventkit-service"; sourceTree = BUILT_PRODUCTS_DIR; };
+		48AF8DEF212624C400EF5A6F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		48AF8DFA212624E700EF5A6F /* btt-services-tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "btt-services-tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		48AF8DFC212624E700EF5A6F /* NSDictionaryCTSCommandLineArgumentsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSDictionaryCTSCommandLineArgumentsTests.m; sourceTree = "<group>"; };
+		48AF8E02212625A800EF5A6F /* NSDictionary+CTSCommandLineArguments.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+CTSCommandLineArguments.h"; sourceTree = "<group>"; };
+		48AF8E03212625A800EF5A6F /* NSDictionary+CTSCommandLineArguments.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+CTSCommandLineArguments.m"; sourceTree = "<group>"; };
+		48AF8E0821262A8100EF5A6F /* OCHamcrest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OCHamcrest.framework; sourceTree = "<group>"; };
+		48AF8E0921262A8100EF5A6F /* OCMockito.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OCMockito.framework; sourceTree = "<group>"; };
+		48D0F8B021267A1E00D91348 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		48D0F8BF21267A2E00D91348 /* volume-service */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "volume-service"; sourceTree = BUILT_PRODUCTS_DIR; };
+		48D0F8C1212687C300D91348 /* CTSVolumeService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTSVolumeService.h; sourceTree = "<group>"; };
+		48D0F8C2212687C300D91348 /* CTSVolumeService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTSVolumeService.m; sourceTree = "<group>"; };
+		48D0F8C521268DD200D91348 /* CTSVolumeServiceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTSVolumeServiceTests.m; sourceTree = "<group>"; };
+		48D0F8C8212690BA00D91348 /* CTSAudioToolboxVolumeServiceTestStub.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTSAudioToolboxVolumeServiceTestStub.h; sourceTree = "<group>"; };
+		48D0F8C9212690BA00D91348 /* CTSAudioToolboxVolumeServiceTestStub.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTSAudioToolboxVolumeServiceTestStub.m; sourceTree = "<group>"; };
+		48D0F8CC21269A5000D91348 /* CTSService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTSService.h; sourceTree = "<group>"; };
+		48F152B32126C18D0021D020 /* NSString+CTSSerializedVolumeStatus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+CTSSerializedVolumeStatus.h"; sourceTree = "<group>"; };
+		48F152B42126C18D0021D020 /* NSString+CTSSerializedVolumeStatus.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+CTSSerializedVolumeStatus.m"; sourceTree = "<group>"; };
+		48F152B72126C2B90021D020 /* NSStringCTSSerializedVolumeStatusTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSStringCTSSerializedVolumeStatusTests.m; sourceTree = "<group>"; };
+		48F152BB2126DA770021D020 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		48F152CA2126DA7F0021D020 /* controlstrip-service */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "controlstrip-service"; sourceTree = BUILT_PRODUCTS_DIR; };
+		48F152CC2126DEF30021D020 /* CTSControlStripService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTSControlStripService.h; sourceTree = "<group>"; };
+		48F152CD2126DEF30021D020 /* CTSControlStripService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTSControlStripService.m; sourceTree = "<group>"; };
+		48F153E72126E6E10021D020 /* CTSControlStripServiceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTSControlStripServiceTests.m; sourceTree = "<group>"; };
+		48F153E92126E8F50021D020 /* CTSAudioToolboxControlStripServiceTestStub.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTSAudioToolboxControlStripServiceTestStub.h; sourceTree = "<group>"; };
+		48F153EA2126E8F50021D020 /* CTSAudioToolboxControlStripServiceTestStub.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTSAudioToolboxControlStripServiceTestStub.m; sourceTree = "<group>"; };
+		48F153EC2126EA4B0021D020 /* CTSCoreGraphicsEventControlStripServiceTestStub.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTSCoreGraphicsEventControlStripServiceTestStub.h; sourceTree = "<group>"; };
+		48F153ED2126EA4B0021D020 /* CTSCoreGraphicsEventControlStripServiceTestStub.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTSCoreGraphicsEventControlStripServiceTestStub.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		48AF8DE9212624C400EF5A6F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48AF8DF7212624E700EF5A6F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48AF8E0A21262A8100EF5A6F /* OCHamcrest.framework in Frameworks */,
+				48AF8E0B21262A8100EF5A6F /* OCMockito.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48D0F8BA21267A2E00D91348 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48F152C52126DA7F0021D020 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		48AF8DE3212624C400EF5A6F = {
+			isa = PBXGroup;
+			children = (
+				48AF8DEE212624C400EF5A6F /* Sources */,
+				48AF8DFB212624E700EF5A6F /* Tests */,
+				48AF8DED212624C400EF5A6F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		48AF8DED212624C400EF5A6F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				48AF8DEC212624C400EF5A6F /* eventkit-service */,
+				48AF8DFA212624E700EF5A6F /* btt-services-tests.xctest */,
+				48D0F8BF21267A2E00D91348 /* volume-service */,
+				48F152CA2126DA7F0021D020 /* controlstrip-service */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		48AF8DEE212624C400EF5A6F /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				48F152BA2126DA5D0021D020 /* controlstrip-service */,
+				48D0F8AF212679EE00D91348 /* volume-service */,
+				48AF8E052126290D00EF5A6F /* eventkit-service */,
+				48AF8E062126293500EF5A6F /* Utils */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		48AF8DFB212624E700EF5A6F /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				48AF8E0721262A7000EF5A6F /* Frameworks */,
+				48D0F8CD21269BA100D91348 /* Stubs */,
+				48AF8DFC212624E700EF5A6F /* NSDictionaryCTSCommandLineArgumentsTests.m */,
+				48877629212637F300685702 /* CTSBetterTouchToolWebServerConfigurationTests.m */,
+				4887762C21263B7B00685702 /* NSURLCTSBetterTouchToolWebServerEndpointTests.m */,
+				48877634212651F900685702 /* NSStringCTSReadableEventStatusTests.m */,
+				488776362126586600685702 /* CTSEventKitServiceTests.m */,
+				48F152B72126C2B90021D020 /* NSStringCTSSerializedVolumeStatusTests.m */,
+				48D0F8C521268DD200D91348 /* CTSVolumeServiceTests.m */,
+				48F153E72126E6E10021D020 /* CTSControlStripServiceTests.m */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		48AF8E052126290D00EF5A6F /* eventkit-service */ = {
+			isa = PBXGroup;
+			children = (
+				48AF8DEF212624C400EF5A6F /* main.m */,
+				4887761D2126324300685702 /* CTSEventKitService.h */,
+				4887761E2126324300685702 /* CTSEventKitService.m */,
+				4887763021264F3E00685702 /* NSString+CTSReadableEventStatus.h */,
+				4887763121264F3E00685702 /* NSString+CTSReadableEventStatus.m */,
+			);
+			path = "eventkit-service";
+			sourceTree = "<group>";
+		};
+		48AF8E062126293500EF5A6F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				48D0F8CC21269A5000D91348 /* CTSService.h */,
+				48877621212634DF00685702 /* CTSBetterTouchToolWebServerConfiguration.h */,
+				48877622212634DF00685702 /* CTSBetterTouchToolWebServerConfiguration.m */,
+				48AF8E02212625A800EF5A6F /* NSDictionary+CTSCommandLineArguments.h */,
+				48AF8E03212625A800EF5A6F /* NSDictionary+CTSCommandLineArguments.m */,
+				488776252126379D00685702 /* NSURL+CTSBetterTouchToolWebServerEndpoint.h */,
+				488776262126379D00685702 /* NSURL+CTSBetterTouchToolWebServerEndpoint.m */,
+				4887762F2126476C00685702 /* CTSWeakify.h */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		48AF8E0721262A7000EF5A6F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				48AF8E0821262A8100EF5A6F /* OCHamcrest.framework */,
+				48AF8E0921262A8100EF5A6F /* OCMockito.framework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		48D0F8AF212679EE00D91348 /* volume-service */ = {
+			isa = PBXGroup;
+			children = (
+				48D0F8B021267A1E00D91348 /* main.m */,
+				48D0F8C1212687C300D91348 /* CTSVolumeService.h */,
+				48D0F8C2212687C300D91348 /* CTSVolumeService.m */,
+				48F152B32126C18D0021D020 /* NSString+CTSSerializedVolumeStatus.h */,
+				48F152B42126C18D0021D020 /* NSString+CTSSerializedVolumeStatus.m */,
+			);
+			path = "volume-service";
+			sourceTree = "<group>";
+		};
+		48D0F8CD21269BA100D91348 /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				48D0F8C8212690BA00D91348 /* CTSAudioToolboxVolumeServiceTestStub.h */,
+				48D0F8C9212690BA00D91348 /* CTSAudioToolboxVolumeServiceTestStub.m */,
+				48F153E92126E8F50021D020 /* CTSAudioToolboxControlStripServiceTestStub.h */,
+				48F153EA2126E8F50021D020 /* CTSAudioToolboxControlStripServiceTestStub.m */,
+				48F153EC2126EA4B0021D020 /* CTSCoreGraphicsEventControlStripServiceTestStub.h */,
+				48F153ED2126EA4B0021D020 /* CTSCoreGraphicsEventControlStripServiceTestStub.m */,
+			);
+			path = Stubs;
+			sourceTree = "<group>";
+		};
+		48F152BA2126DA5D0021D020 /* controlstrip-service */ = {
+			isa = PBXGroup;
+			children = (
+				48F152BB2126DA770021D020 /* main.m */,
+				48F152CC2126DEF30021D020 /* CTSControlStripService.h */,
+				48F152CD2126DEF30021D020 /* CTSControlStripService.m */,
+			);
+			path = "controlstrip-service";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		48AF8DEB212624C400EF5A6F /* eventkit-service */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 48AF8DF3212624C400EF5A6F /* Build configuration list for PBXNativeTarget "eventkit-service" */;
+			buildPhases = (
+				48AF8DE8212624C400EF5A6F /* Sources */,
+				48AF8DE9212624C400EF5A6F /* Frameworks */,
+				48AF8DEA212624C400EF5A6F /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "eventkit-service";
+			productName = "btt-services";
+			productReference = 48AF8DEC212624C400EF5A6F /* eventkit-service */;
+			productType = "com.apple.product-type.tool";
+		};
+		48AF8DF9212624E700EF5A6F /* btt-services-tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 48AF8DFF212624E700EF5A6F /* Build configuration list for PBXNativeTarget "btt-services-tests" */;
+			buildPhases = (
+				48AF8DF6212624E700EF5A6F /* Sources */,
+				488774FE21262FBC00685702 /* Copy Frameworks */,
+				48AF8DF7212624E700EF5A6F /* Frameworks */,
+				48AF8DF8212624E700EF5A6F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "btt-services-tests";
+			productName = "btt-services-tests";
+			productReference = 48AF8DFA212624E700EF5A6F /* btt-services-tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		48D0F8B221267A2E00D91348 /* volume-service */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 48D0F8BC21267A2E00D91348 /* Build configuration list for PBXNativeTarget "volume-service" */;
+			buildPhases = (
+				48D0F8B321267A2E00D91348 /* Sources */,
+				48D0F8BA21267A2E00D91348 /* Frameworks */,
+				48D0F8BB21267A2E00D91348 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "volume-service";
+			productName = "btt-services";
+			productReference = 48D0F8BF21267A2E00D91348 /* volume-service */;
+			productType = "com.apple.product-type.tool";
+		};
+		48F152BD2126DA7F0021D020 /* controlstrip-service */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 48F152C72126DA7F0021D020 /* Build configuration list for PBXNativeTarget "controlstrip-service" */;
+			buildPhases = (
+				48F152BE2126DA7F0021D020 /* Sources */,
+				48F152C52126DA7F0021D020 /* Frameworks */,
+				48F152C62126DA7F0021D020 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "controlstrip-service";
+			productName = "btt-services";
+			productReference = 48F152CA2126DA7F0021D020 /* controlstrip-service */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		48AF8DE4212624C400EF5A6F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "CarbonTech Software LLC";
+				TargetAttributes = {
+					48AF8DEB212624C400EF5A6F = {
+						CreatedOnToolsVersion = 9.4;
+					};
+					48AF8DF9212624E700EF5A6F = {
+						CreatedOnToolsVersion = 9.4;
+					};
+				};
+			};
+			buildConfigurationList = 48AF8DE7212624C400EF5A6F /* Build configuration list for PBXProject "btt-services" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 48AF8DE3212624C400EF5A6F;
+			productRefGroup = 48AF8DED212624C400EF5A6F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				48AF8DEB212624C400EF5A6F /* eventkit-service */,
+				48D0F8B221267A2E00D91348 /* volume-service */,
+				48F152BD2126DA7F0021D020 /* controlstrip-service */,
+				48AF8DF9212624E700EF5A6F /* btt-services-tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		48AF8DF8212624E700EF5A6F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		48AF8DE8212624C400EF5A6F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				488776272126379D00685702 /* NSURL+CTSBetterTouchToolWebServerEndpoint.m in Sources */,
+				4887763221264F3E00685702 /* NSString+CTSReadableEventStatus.m in Sources */,
+				48AF8E04212625A800EF5A6F /* NSDictionary+CTSCommandLineArguments.m in Sources */,
+				48877623212634DF00685702 /* CTSBetterTouchToolWebServerConfiguration.m in Sources */,
+				4887761F2126324300685702 /* CTSEventKitService.m in Sources */,
+				48AF8DF0212624C400EF5A6F /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48AF8DF6212624E700EF5A6F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				488776282126379D00685702 /* NSURL+CTSBetterTouchToolWebServerEndpoint.m in Sources */,
+				48F153E82126E6E10021D020 /* CTSControlStripServiceTests.m in Sources */,
+				4887761C212631CB00685702 /* NSDictionary+CTSCommandLineArguments.m in Sources */,
+				48F152B82126C2B90021D020 /* NSStringCTSSerializedVolumeStatusTests.m in Sources */,
+				48D0F8C4212687C300D91348 /* CTSVolumeService.m in Sources */,
+				48F152CF2126DEF30021D020 /* CTSControlStripService.m in Sources */,
+				48F153EB2126E8F50021D020 /* CTSAudioToolboxControlStripServiceTestStub.m in Sources */,
+				48F153EE2126EA4B0021D020 /* CTSCoreGraphicsEventControlStripServiceTestStub.m in Sources */,
+				48877635212651F900685702 /* NSStringCTSReadableEventStatusTests.m in Sources */,
+				48D0F8C721268DD200D91348 /* CTSVolumeServiceTests.m in Sources */,
+				48F152BC2126DA770021D020 /* main.m in Sources */,
+				488776202126324300685702 /* CTSEventKitService.m in Sources */,
+				4887762B212637F300685702 /* CTSBetterTouchToolWebServerConfigurationTests.m in Sources */,
+				48AF8DFD212624E700EF5A6F /* NSDictionaryCTSCommandLineArgumentsTests.m in Sources */,
+				4887763321264F3E00685702 /* NSString+CTSReadableEventStatus.m in Sources */,
+				4887762E21263B7B00685702 /* NSURLCTSBetterTouchToolWebServerEndpointTests.m in Sources */,
+				488776372126586600685702 /* CTSEventKitServiceTests.m in Sources */,
+				48F152B62126C18D0021D020 /* NSString+CTSSerializedVolumeStatus.m in Sources */,
+				48877624212634DF00685702 /* CTSBetterTouchToolWebServerConfiguration.m in Sources */,
+				48D0F8CB212690BA00D91348 /* CTSAudioToolboxVolumeServiceTestStub.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48D0F8B321267A2E00D91348 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48D0F8C3212687C300D91348 /* CTSVolumeService.m in Sources */,
+				48D0F8B421267A2E00D91348 /* NSURL+CTSBetterTouchToolWebServerEndpoint.m in Sources */,
+				48D0F8B621267A2E00D91348 /* NSDictionary+CTSCommandLineArguments.m in Sources */,
+				48F152B52126C18D0021D020 /* NSString+CTSSerializedVolumeStatus.m in Sources */,
+				48D0F8B921267A2E00D91348 /* CTSBetterTouchToolWebServerConfiguration.m in Sources */,
+				48D0F8C021267A7500D91348 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48F152BE2126DA7F0021D020 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48F152C12126DA7F0021D020 /* NSDictionary+CTSCommandLineArguments.m in Sources */,
+				48F152CE2126DEF30021D020 /* CTSControlStripService.m in Sources */,
+				48F152CB2126DA9E0021D020 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		48AF8DF1212624C400EF5A6F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		48AF8DF2212624C400EF5A6F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		48AF8DF4212624C400EF5A6F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		48AF8DF5212624C400EF5A6F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		48AF8E00212624E700EF5A6F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Tests/Frameworks",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"TEST=1",
+					"$(inherited)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/Tests/Frameworks/OCHamcrest.framework/Headers",
+					"$(PROJECT_DIR)/Tests/Frameworks/OCMockito.framework/Headers",
+				);
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.carbontechsoftware.btt-services-tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		48AF8E01212624E700EF5A6F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Tests/Frameworks",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = "TEST=1";
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/Tests/Frameworks/OCHamcrest.framework/Headers",
+					"$(PROJECT_DIR)/Tests/Frameworks/OCMockito.framework/Headers",
+				);
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.carbontechsoftware.btt-services-tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		48D0F8BD21267A2E00D91348 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		48D0F8BE21267A2E00D91348 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		48F152C82126DA7F0021D020 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		48F152C92126DA7F0021D020 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		48AF8DE7212624C400EF5A6F /* Build configuration list for PBXProject "btt-services" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48AF8DF1212624C400EF5A6F /* Debug */,
+				48AF8DF2212624C400EF5A6F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		48AF8DF3212624C400EF5A6F /* Build configuration list for PBXNativeTarget "eventkit-service" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48AF8DF4212624C400EF5A6F /* Debug */,
+				48AF8DF5212624C400EF5A6F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		48AF8DFF212624E700EF5A6F /* Build configuration list for PBXNativeTarget "btt-services-tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48AF8E00212624E700EF5A6F /* Debug */,
+				48AF8E01212624E700EF5A6F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		48D0F8BC21267A2E00D91348 /* Build configuration list for PBXNativeTarget "volume-service" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48D0F8BD21267A2E00D91348 /* Debug */,
+				48D0F8BE21267A2E00D91348 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		48F152C72126DA7F0021D020 /* Build configuration list for PBXNativeTarget "controlstrip-service" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48F152C82126DA7F0021D020 /* Debug */,
+				48F152C92126DA7F0021D020 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 48AF8DE4212624C400EF5A6F /* Project object */;
+}

@@ -4,12 +4,14 @@
 
 #import <EventKit/EventKit.h>
 
-#import "CTSEventKitService.h"
-#import "CTSBetterTouchToolWebServerConfiguration.h"
+#import "CTSWeakify.h"
+
 #import "NSString+CTSReadableEventStatus.h"
 #import "NSURL+CTSBetterTouchToolWebServerEndpoint.h"
+
+#import "CTSEventKitService.h"
+#import "CTSBetterTouchToolWebServerConfiguration.h"
 #import "EKEvent+CTSVisibility.h"
-#import "CTSWeakify.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -1,10 +1,10 @@
 #import <Foundation/Foundation.h>
 #import <EventKit/EventKit.h>
 
+#import "NSDictionary+CTSCommandLineArguments.h"
+
 #import "CTSBetterTouchToolWebServerConfiguration.h"
 #import "CTSEventKitService.h"
-
-#import "NSDictionary+CTSCommandLineArguments.h"
 
 static NSString * const kCalendarNameDefaultDelimiter = @",";
 

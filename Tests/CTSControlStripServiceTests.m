@@ -3,11 +3,11 @@
 #import <OCMockito/OCMockito.h>
 
 #import <IOKit/hidsystem/ev_keymap.h>
+#import "CTSWeakify.h"
 
-#import "CTSControlStripService.h"
 #import "CTSAudioToolboxControlStripServiceTestStub.h"
 #import "CTSCoreGraphicsEventControlStripServiceTestStub.h"
-#import "CTSWeakify.h"
+#import "CTSControlStripService.h"
 
 @class CTSControlStripServiceTests;
 static CTSControlStripServiceTests *gControlStripServiceTestRunner = nil;

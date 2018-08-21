@@ -2,8 +2,8 @@
 #import <OCHamcrest/OCHamcrest.h>
 #import <OCMockito/OCMockito.h>
 
-#import "NSURL+CTSBetterTouchToolWebServerEndpoint.h"
 #import "CTSBetterTouchToolWebServerConfiguration.h"
+#import "NSURL+CTSBetterTouchToolWebServerEndpoint.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

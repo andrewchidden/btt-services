@@ -2,12 +2,12 @@
 #import <OCHamcrest/OCHamcrest.h>
 #import <OCMockito/OCMockito.h>
 
-#import "CTSAudioToolboxVolumeServiceTestStub.h"
 #import "CTSWeakify.h"
 
 #import "NSURL+CTSBetterTouchToolWebServerEndpoint.h"
 #import "NSString+CTSSerializedVolumeStatus.h"
 
+#import "CTSAudioToolboxVolumeServiceTestStub.h"
 #import "CTSBetterTouchToolWebServerConfiguration.h"
 #import "CTSVolumeService.h"
 

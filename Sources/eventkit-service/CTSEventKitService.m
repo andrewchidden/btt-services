@@ -4,6 +4,7 @@
 #import "CTSBetterTouchToolWebServerConfiguration.h"
 
 #import "NSURL+CTSBetterTouchToolWebServerEndpoint.h"
+#import "EKEvent+CTSVisibility.h"
 #import "NSString+CTSReadableEventStatus.h"
 #import "CTSWeakify.h"
 
@@ -205,7 +206,9 @@ static NSString * const kBetterTouchToolRefreshWidgetEndpoint = @"refresh_widget
                                                                            calendars:self.calendars];
     NSMutableArray<EKEvent *> * const eventsArray = [NSMutableArray array];
     [self.eventStore enumerateEventsMatchingPredicate:predicate usingBlock:^(EKEvent * const event, BOOL *stop) {
-        [eventsArray addObject:event];
+        if (event.isVisible) {
+            [eventsArray addObject:event];
+        }
     }];
 
     EKEvent * const firstEvent =

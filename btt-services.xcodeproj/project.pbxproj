@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48750AA6212BF41C0015F516 /* EKEvent+CTSVisibility.m in Sources */ = {isa = PBXBuildFile; fileRef = 48750AA5212BF41C0015F516 /* EKEvent+CTSVisibility.m */; };
+		48750AA7212BF41C0015F516 /* EKEvent+CTSVisibility.m in Sources */ = {isa = PBXBuildFile; fileRef = 48750AA5212BF41C0015F516 /* EKEvent+CTSVisibility.m */; };
+		48750AA9212BF56C0015F516 /* EKEventCTSVisibilityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 48750AA8212BF56C0015F516 /* EKEventCTSVisibilityTests.m */; };
 		488774FF21262FC800685702 /* OCHamcrest.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 48AF8E0821262A8100EF5A6F /* OCHamcrest.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4887750021262FC800685702 /* OCMockito.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 48AF8E0921262A8100EF5A6F /* OCMockito.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4887761C212631CB00685702 /* NSDictionary+CTSCommandLineArguments.m in Sources */ = {isa = PBXBuildFile; fileRef = 48AF8E03212625A800EF5A6F /* NSDictionary+CTSCommandLineArguments.m */; };
@@ -91,6 +94,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		48750AA4212BF41C0015F516 /* EKEvent+CTSVisibility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EKEvent+CTSVisibility.h"; sourceTree = "<group>"; };
+		48750AA5212BF41C0015F516 /* EKEvent+CTSVisibility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "EKEvent+CTSVisibility.m"; sourceTree = "<group>"; };
+		48750AA8212BF56C0015F516 /* EKEventCTSVisibilityTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EKEventCTSVisibilityTests.m; sourceTree = "<group>"; };
 		4887761D2126324300685702 /* CTSEventKitService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTSEventKitService.h; sourceTree = "<group>"; };
 		4887761E2126324300685702 /* CTSEventKitService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTSEventKitService.m; sourceTree = "<group>"; };
 		48877621212634DF00685702 /* CTSBetterTouchToolWebServerConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTSBetterTouchToolWebServerConfiguration.h; sourceTree = "<group>"; };
@@ -208,6 +214,7 @@
 				48877629212637F300685702 /* CTSBetterTouchToolWebServerConfigurationTests.m */,
 				4887762C21263B7B00685702 /* NSURLCTSBetterTouchToolWebServerEndpointTests.m */,
 				48877634212651F900685702 /* NSStringCTSReadableEventStatusTests.m */,
+				48750AA8212BF56C0015F516 /* EKEventCTSVisibilityTests.m */,
 				488776362126586600685702 /* CTSEventKitServiceTests.m */,
 				48F152B72126C2B90021D020 /* NSStringCTSSerializedVolumeStatusTests.m */,
 				48D0F8C521268DD200D91348 /* CTSVolumeServiceTests.m */,
@@ -224,6 +231,8 @@
 				4887761E2126324300685702 /* CTSEventKitService.m */,
 				4887763021264F3E00685702 /* NSString+CTSReadableEventStatus.h */,
 				4887763121264F3E00685702 /* NSString+CTSReadableEventStatus.m */,
+				48750AA4212BF41C0015F516 /* EKEvent+CTSVisibility.h */,
+				48750AA5212BF41C0015F516 /* EKEvent+CTSVisibility.m */,
 			);
 			path = "eventkit-service";
 			sourceTree = "<group>";
@@ -414,6 +423,7 @@
 				488776272126379D00685702 /* NSURL+CTSBetterTouchToolWebServerEndpoint.m in Sources */,
 				4887763221264F3E00685702 /* NSString+CTSReadableEventStatus.m in Sources */,
 				48AF8E04212625A800EF5A6F /* NSDictionary+CTSCommandLineArguments.m in Sources */,
+				48750AA6212BF41C0015F516 /* EKEvent+CTSVisibility.m in Sources */,
 				48877623212634DF00685702 /* CTSBetterTouchToolWebServerConfiguration.m in Sources */,
 				4887761F2126324300685702 /* CTSEventKitService.m in Sources */,
 				48AF8DF0212624C400EF5A6F /* main.m in Sources */,
@@ -427,6 +437,7 @@
 				488776282126379D00685702 /* NSURL+CTSBetterTouchToolWebServerEndpoint.m in Sources */,
 				48F153E82126E6E10021D020 /* CTSControlStripServiceTests.m in Sources */,
 				4887761C212631CB00685702 /* NSDictionary+CTSCommandLineArguments.m in Sources */,
+				48750AA7212BF41C0015F516 /* EKEvent+CTSVisibility.m in Sources */,
 				48F152B82126C2B90021D020 /* NSStringCTSSerializedVolumeStatusTests.m in Sources */,
 				48D0F8C4212687C300D91348 /* CTSVolumeService.m in Sources */,
 				48F152CF2126DEF30021D020 /* CTSControlStripService.m in Sources */,
@@ -438,6 +449,7 @@
 				488776202126324300685702 /* CTSEventKitService.m in Sources */,
 				4887762B212637F300685702 /* CTSBetterTouchToolWebServerConfigurationTests.m in Sources */,
 				48AF8DFD212624E700EF5A6F /* NSDictionaryCTSCommandLineArgumentsTests.m in Sources */,
+				48750AA9212BF56C0015F516 /* EKEventCTSVisibilityTests.m in Sources */,
 				4887763321264F3E00685702 /* NSString+CTSReadableEventStatus.m in Sources */,
 				4887762E21263B7B00685702 /* NSURLCTSBetterTouchToolWebServerEndpointTests.m in Sources */,
 				488776372126586600685702 /* CTSEventKitServiceTests.m in Sources */,

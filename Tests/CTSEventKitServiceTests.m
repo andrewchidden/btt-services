@@ -8,6 +8,7 @@
 #import "CTSBetterTouchToolWebServerConfiguration.h"
 #import "NSString+CTSReadableEventStatus.h"
 #import "NSURL+CTSBetterTouchToolWebServerEndpoint.h"
+#import "EKEvent+CTSVisibility.h"
 #import "CTSWeakify.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -162,8 +163,44 @@ static NSString * const kEmptyTestStatus = @"%empty-test-status%";
             [self.service performSelector:NSSelectorFromString(selectorCaptor.value)
                                withObject:mock([NSNotification class])];
 #pragma clang diagnostic pop
-            // Then it should update the status file after some time.
+            // Then it should update the status file
             [self verifyServiceSavesNextEventToStatusFile:@"Foo Bar Event in 1 hr"];
+            //   And push the update to the widget.
+            [self verifyServicePushesUpdateRequestToBTT];
+        }
+    }];
+}
+
+- (void)testServiceIgnoresNonVisibleEvents
+{
+    weakify(self);
+    [self verifyServiceStart:self.service withBlock:^(EKEventStoreRequestAccessCompletionHandler completionHandler) {
+        strongify(self);
+        // Given the service receives access permissions to the calendar
+        completionHandler(YES, nil);
+        //   And added an observer to notification center for event store changes
+        HCArgumentCaptor * const selectorCaptor = [HCArgumentCaptor new];
+        [[verify(self.notificationCenterMock) withMatcher:(id)selectorCaptor forArgument:1]
+         addObserver:self.service
+         selector:@selector(testServiceSetUp)
+         name:EKEventStoreChangedNotification
+         object:self.eventStoreMock];
+        //   And push the current event status to the widget.
+        [self verifyServicePushesUpdateRequestToBTT];
+        //   And the next event is no longer visible
+        [self resetStatusFile];
+        [given(self.nextEventMock.isVisible) willReturnBool:NO];
+
+        // When the service receives an event store notification.
+        assertThat(selectorCaptor.value, notNilValue());
+        if (selectorCaptor.value) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+            [self.service performSelector:NSSelectorFromString(selectorCaptor.value)
+                               withObject:mock([NSNotification class])];
+#pragma clang diagnostic pop
+            // Then it should update the status file
+            [self verifyServiceSavesNextEventToStatusFile:@"A Long Meeting in 5 hrs"];
             //   And push the update to the widget.
             [self verifyServicePushesUpdateRequestToBTT];
         }
@@ -305,11 +342,13 @@ static NSString * const kEmptyTestStatus = @"%empty-test-status%";
     [given(self.nextEventMock.title) willReturn:nextEventTitle];
     [given(self.nextEventMock.startDate) willReturn:[NSDate dateWithTimeIntervalSinceNow:60*60*1.0]];
     [given(self.nextEventMock.endDate) willReturn:[NSDate dateWithTimeIntervalSinceNow:60*60*2.0]];
+    [given(self.nextEventMock.isVisible) willReturnBool:YES];
 
     self.futureEventMock = mock([EKEvent class]);
     [given(self.futureEventMock.title) willReturn:futureEventTitle];
     [given(self.futureEventMock.startDate) willReturn:[NSDate dateWithTimeIntervalSinceNow:60*60*5.0]];
     [given(self.futureEventMock.endDate) willReturn:[NSDate dateWithTimeIntervalSinceNow:60*60*10.0]];
+    [given(self.futureEventMock.isVisible) willReturnBool:YES];
 
     self.nextEventPredicateMock = mock([NSPredicate class]);
     [given([self.eventStoreMock predicateForEventsWithStartDate:anything()

@@ -65,7 +65,7 @@ int main(int argc, const char * argv[]) {
         NSString * const nameDelimiter = calendarNameDelimiter ?: kCalendarNameDefaultDelimiter;
         NSArray<NSString *> * const calendarNames = [calendarNamesString componentsSeparatedByString:nameDelimiter];
 
-        EKEventStore * const eventStore = [EKEventStore new];
+        EKEventStore * const eventStore = [[EKEventStore alloc] init];
         NSNotificationCenter * const notificationCenter = [NSNotificationCenter defaultCenter];
         NSURLSession * const URLSession = [NSURLSession sharedSession];
         NSRunLoop * const runLoop = [NSRunLoop currentRunLoop];

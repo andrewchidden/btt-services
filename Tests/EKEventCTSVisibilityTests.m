@@ -30,7 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)testVisibilityForAvailability
 {
     // Given an event
-    EKEventConcreteMock * const event = [EKEventConcreteMock new];
+    EKEventConcreteMock * const event = [[EKEventConcreteMock alloc] init];
     //   With a non-canceled status
     event.status = EKEventStatusConfirmed;
 
@@ -58,7 +58,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)testVisibilityForStatus
 {
     // Given an event
-    EKEventConcreteMock * const event = [EKEventConcreteMock new];
+    EKEventConcreteMock * const event = [[EKEventConcreteMock alloc] init];
     // When the event status is canceled
     event.status = EKEventStatusCanceled;
     // Then the event availability should be NO regardless of availability.

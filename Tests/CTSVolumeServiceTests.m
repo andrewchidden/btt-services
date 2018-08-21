@@ -389,7 +389,7 @@ static NSString * const kTestStatusFilePath = @"/tmp/volume-service-test-status"
 - (void)verifyServicePushesUpdateRequestToBTT
 {
     // A request is created using the URL session with the expected URL
-    HCArgumentCaptor * const requestCaptor = [HCArgumentCaptor new];
+    HCArgumentCaptor * const requestCaptor = [[HCArgumentCaptor alloc] init];
     [verify(self.URLSessionMock) dataTaskWithRequest:(id)requestCaptor];
     NSURLRequest * const request = (NSURLRequest *)requestCaptor.value;
     assertThat(request.URL, equalTo([NSURL cts_URLWithWebServerConfiguration:self.webServerConfigurationMock

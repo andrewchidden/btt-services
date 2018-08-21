@@ -111,7 +111,7 @@ static NSString * const kEmptyTestStatus = @"%empty-test-status%";
         // When the service receives access permissions to the calendar
         completionHandler(YES, nil);
         // Then the service should add an update event timer to the run loop.
-        HCArgumentCaptor * const timerCaptor = [HCArgumentCaptor new];
+        HCArgumentCaptor * const timerCaptor = [[HCArgumentCaptor alloc] init];
         [verify(self.runLoopMock) addTimer:(id)timerCaptor forMode:NSRunLoopCommonModes];
         assertThat(timerCaptor.value, notNilValue());
         NSTimer * const timer = (NSTimer *)timerCaptor.value;
@@ -142,7 +142,7 @@ static NSString * const kEmptyTestStatus = @"%empty-test-status%";
         // When the service receives access permissions to the calendar
         completionHandler(YES, nil);
         // Then it should add an observer to notification center for event store changes
-        HCArgumentCaptor * const selectorCaptor = [HCArgumentCaptor new];
+        HCArgumentCaptor * const selectorCaptor = [[HCArgumentCaptor alloc] init];
         [[verify(self.notificationCenterMock) withMatcher:(id)selectorCaptor forArgument:1]
          addObserver:self.service
          selector:@selector(testServiceSetUp)
@@ -179,7 +179,7 @@ static NSString * const kEmptyTestStatus = @"%empty-test-status%";
         // Given the service receives access permissions to the calendar
         completionHandler(YES, nil);
         //   And added an observer to notification center for event store changes
-        HCArgumentCaptor * const selectorCaptor = [HCArgumentCaptor new];
+        HCArgumentCaptor * const selectorCaptor = [[HCArgumentCaptor alloc] init];
         [[verify(self.notificationCenterMock) withMatcher:(id)selectorCaptor forArgument:1]
          addObserver:self.service
          selector:@selector(testServiceSetUp)
@@ -222,7 +222,7 @@ static NSString * const kEmptyTestStatus = @"%empty-test-status%";
         // And Given the event information does not change
         [self resetStatusFile];
         // When the service is updated again (by timer)
-        HCArgumentCaptor * const timerCaptor = [HCArgumentCaptor new];
+        HCArgumentCaptor * const timerCaptor = [[HCArgumentCaptor alloc] init];
         [verify(self.runLoopMock) addTimer:(id)timerCaptor forMode:NSRunLoopCommonModes];
         assertThat(timerCaptor.value, notNilValue());
         NSTimer * const timer = (NSTimer *)timerCaptor.value;
@@ -280,7 +280,7 @@ static NSString * const kEmptyTestStatus = @"%empty-test-status%";
     // Then it should now be running
     assertThatBool([service isRunning], isTrue());
     //   And it should request access permissions to the user's calendar.
-    HCArgumentCaptor * const completionCaptor = [HCArgumentCaptor new];
+    HCArgumentCaptor * const completionCaptor = [[HCArgumentCaptor alloc] init];
     [verify(self.eventStoreMock) requestAccessToEntityType:EKEntityTypeEvent completion:(id)completionCaptor];
     assertThat(completionCaptor.value, notNilValue());
     if (completionCaptor.value) {
@@ -315,7 +315,7 @@ static NSString * const kEmptyTestStatus = @"%empty-test-status%";
 - (void)verifyServicePushesUpdateRequestToBTT
 {
     // A request is created using the URL session with the expected URL
-    HCArgumentCaptor * const requestCaptor = [HCArgumentCaptor new];
+    HCArgumentCaptor * const requestCaptor = [[HCArgumentCaptor alloc] init];
     [verify(self.URLSessionMock) dataTaskWithRequest:(id)requestCaptor];
     NSURLRequest * const request = (NSURLRequest *)requestCaptor.value;
     assertThat(request.URL, equalTo([NSURL cts_URLWithWebServerConfiguration:self.webServerConfigurationMock

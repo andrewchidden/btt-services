@@ -10,7 +10,7 @@ NS_ASSUME_NONNULL_BEGIN
 
     if (self) {
         _URL = URL;
-        _sharedSecret = sharedSecret;
+        _sharedSecret = [sharedSecret copy];
     }
 
     return self;

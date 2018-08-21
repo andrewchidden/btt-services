@@ -59,10 +59,10 @@ static NSString * const kBetterTouchToolRefreshWidgetEndpoint = @"refresh_widget
         _notificationCenter = notificationCenter;
         _URLSession = URLSession;
         _eventLookahead = eventLookahead;
-        _statusFilePath = statusFilePath;
-        _noEventsMessage = noEventsMessage ?: kNoEventsDefaultStatusMessage;
-        _calendarNames = calendarNames ?: @[];
-        _widgetUUID = widgetUUID;
+        _statusFilePath = [statusFilePath copy];
+        _noEventsMessage = [noEventsMessage copy] ?: kNoEventsDefaultStatusMessage;
+        _calendarNames = [calendarNames copy] ?: @[];
+        _widgetUUID = [widgetUUID copy];
         _webServerConfiguration = webServerConfiguration;
         _runLoop = runLoop;
 

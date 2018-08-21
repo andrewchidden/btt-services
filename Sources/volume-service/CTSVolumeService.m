@@ -45,9 +45,9 @@ static NSTimeInterval const kUpdateDebounceTimeInterval = 0.02;
     self = [super init];
 
     if (self) {
-        _statusFilePath = statusFilePath;
+        _statusFilePath = [statusFilePath copy];
         _URLSession = URLSession;
-        _widgetUUID = widgetUUID;
+        _widgetUUID = [widgetUUID copy];
         _webServerConfiguration = webServerConfiguration;
         _volumeThresholds = (volumeThresholds.count > 0 ? volumeThresholds : nil);
     }

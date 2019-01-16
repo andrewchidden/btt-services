@@ -4,24 +4,16 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-static NSEventModifierFlags const kSmallStepModifierFlags = (NSEventModifierFlagShift | NSEventModifierFlagOption);
-static NSString * const kFeedbackSoundFilePath =
-    @"/System/Library/LoginPlugins/BezelServices.loginPlugin/Contents/Resources/volume.aiff";
-static NSString * const kSystemPreferencePaneBasePath = @"/System/Library/PreferencePanes/";
-static NSString * const kSoundPreferencePaneFileName = @"Sound.prefPane";
-static NSString * const kDisplaysPreferencePaneFileName = @"Displays.prefPane";
-
 @interface CTSControlStripService ()
 
 @property (nonatomic, assign, readonly) CTSControlStripControlType controlType;
 @property (nonatomic, strong, readonly) NSWorkspace *workspace;
 @property (nonatomic, assign, readonly, getter=isShiftPressed) BOOL shiftPressed;
 @property (nonatomic, assign, readonly, getter=isOptionPressed) BOOL optionPressed;
-@property (nonatomic, assign, readonly) BOOL shouldUseSmallStep;
-@property (nonatomic, assign, readonly) BOOL shouldOpenPreferencePane;
+@property (nonatomic, assign, readonly) BOOL shouldPerformModifiedKeyPress;
 @property (nonatomic, assign, readonly, getter=isVolumeControlType) BOOL volumeControlType;
-@property (nonatomic, assign, readonly) BOOL shouldPlayFeedbackSound;
 @property (nonatomic, assign, readonly) CGKeyCode keyCode;
+@property (nonatomic, assign, readwrite) io_connect_t hidConnection;
 
 @end
 
@@ -30,7 +22,6 @@ static NSString * const kDisplaysPreferencePaneFileName = @"Displays.prefPane";
 @synthesize running = _running;
 
 - (instancetype)initWithControlType:(CTSControlStripControlType)controlType
-              volumeFeedbackEnabled:(BOOL)volumeFeedbackEnabled
                       modifierFlags:(NSEventModifierFlags)modifierFlags
                           workspace:(NSWorkspace *)workspace
 {
@@ -44,12 +35,6 @@ static NSString * const kDisplaysPreferencePaneFileName = @"Displays.prefPane";
 
         _shiftPressed = !!(modifierFlags & NSEventModifierFlagShift);
         _optionPressed = !!(modifierFlags & NSEventModifierFlagOption);
-        _shouldUseSmallStep = (_optionPressed && _shiftPressed);
-        _shouldOpenPreferencePane = (_optionPressed && !_shiftPressed);
-        _shouldPlayFeedbackSound = volumeFeedbackEnabled
-                                && _volumeControlType
-                                && _shiftPressed
-                                && !_optionPressed;
 
         CGKeyCode code = 0;
         if (_volumeControlType) {
@@ -58,12 +43,32 @@ static NSString * const kDisplaysPreferencePaneFileName = @"Displays.prefPane";
             if (_shiftPressed && !_optionPressed) {
                 code = (controlType == CTSControlStripBrightnessUpControl ? NX_KEYTYPE_ILLUMINATION_UP
                                                                           : NX_KEYTYPE_ILLUMINATION_DOWN);
+                _shouldPerformModifiedKeyPress = YES;
             } else {
                 code = (controlType == CTSControlStripBrightnessUpControl ? NX_KEYTYPE_BRIGHTNESS_UP
                                                                           : NX_KEYTYPE_BRIGHTNESS_DOWN);
             }
         }
         _keyCode = code;
+
+        mach_port_t masterPort;
+        io_service_t service = 0;
+        kern_return_t returnValue;
+
+        returnValue = IOMasterPort(bootstrap_port, &masterPort);
+        if (returnValue != KERN_SUCCESS) {
+            return nil;
+        }
+
+        service = IOServiceGetMatchingService(masterPort, IOServiceMatching(kIOHIDSystemClass));
+        if (service == 0) {
+            return nil;
+        }
+
+        returnValue = IOServiceOpen(service, mach_task_self(), kIOHIDParamConnectType, &_hidConnection);
+        if (returnValue != KERN_SUCCESS) {
+            return nil;
+        }
     }
 
     return self;
@@ -72,61 +77,74 @@ static NSString * const kDisplaysPreferencePaneFileName = @"Displays.prefPane";
 - (void)start
 {
     _running = YES;
-
-    if (self.shouldOpenPreferencePane) {
-        NSString * const preferenceName = [self isVolumeControlType] ? kSoundPreferencePaneFileName
-                                                                     : kDisplaysPreferencePaneFileName;
-        NSString * const preferencePanePath =
-            [kSystemPreferencePaneBasePath stringByAppendingPathComponent:preferenceName];
-        [self.workspace openFile:preferencePanePath];
+    if (self.shouldPerformModifiedKeyPress) {
+        [self performModifiedKeyPress];
     } else {
         [self performKeyPress];
     }
-
     _running = NO;
 }
 
 - (void)performKeyPress
 {
-    NSEventModifierFlags const smallStepModifierFlags = (self.shouldUseSmallStep ? kSmallStepModifierFlags : 0);
+    NXEventData event = {0};
+    IOGPoint point = {0};
+    kern_return_t returnValue;
 
+    event.compound.subType = NX_SUBTYPE_AUX_CONTROL_BUTTONS;
+    event.compound.misc.L[0] = (NX_KEYDOWN << 8) | (self.keyCode << 16);
+    returnValue = IOHIDPostEvent(self.hidConnection,
+                                 NX_SYSDEFINED,
+                                 point,
+                                 &event,
+                                 kNXEventDataVersion,
+                                 0,
+                                 0);
+    if (returnValue != KERN_SUCCESS) {
+        return;
+    }
+
+    event.compound.subType = NX_SUBTYPE_AUX_CONTROL_BUTTONS;
+    event.compound.misc.L[0] = (NX_KEYUP << 8) | (self.keyCode << 16);
+    returnValue = IOHIDPostEvent(self.hidConnection,
+                                 NX_SYSDEFINED,
+                                 point,
+                                 &event,
+                                 kNXEventDataVersion,
+                                 0,
+                                 0);
+    if (returnValue != KERN_SUCCESS) {
+        return;
+    }
+}
+
+- (void)performModifiedKeyPress
+{
     NSEvent * const keyDownEvent = [NSEvent otherEventWithType:NSEventTypeSystemDefined
-                                     location:NSPointFromCGPoint(CGPointZero)
-                                modifierFlags:NX_KEYDOWN | smallStepModifierFlags
-                                    timestamp:0
-                                 windowNumber:0
-                                      context:nil
-                                      subtype:8
-                                        data1:((self.keyCode << 16) | (NX_KEYDOWN << 8))
-                                        data2:-1];
+                                                      location:NSPointFromCGPoint(CGPointZero)
+                                                 modifierFlags:NX_KEYDOWN
+                                                     timestamp:0
+                                                  windowNumber:0
+                                                       context:nil
+                                                       subtype:8
+                                                         data1:((self.keyCode << 16) | (NX_KEYDOWN << 8))
+                                                         data2:-1];
     CGEventPost(kCGHIDEventTap, [keyDownEvent CGEvent]);
 
     usleep(1000); // DRAGON: Not waiting can cause the key press to execute out-of-order and fail.
 
     NSEvent * const keyUpEvent = [NSEvent otherEventWithType:NSEventTypeSystemDefined
-                                     location:NSPointFromCGPoint(CGPointZero)
-                                modifierFlags:NX_KEYUP | smallStepModifierFlags
-                                    timestamp:0
-                                 windowNumber:0
-                                      context:nil
-                                      subtype:8
-                                        data1:((self.keyCode << 16) | (NX_KEYUP << 8))
-                                        data2:-1];
+                                                    location:NSPointFromCGPoint(CGPointZero)
+                                               modifierFlags:NX_KEYUP
+                                                   timestamp:0
+                                                windowNumber:0
+                                                     context:nil
+                                                     subtype:8
+                                                       data1:((self.keyCode << 16) | (NX_KEYUP << 8))
+                                                       data2:-1];
     CGEventPost(kCGHIDEventTap, [keyUpEvent CGEvent]);
 
-    usleep(15000); // DRAGON: Not waiting after posting the event can cause the key up to not send.
-
-    if (self.shouldPlayFeedbackSound) {
-        NSURL * const audioFileURL = [NSURL fileURLWithPath:kFeedbackSoundFilePath];
-        SystemSoundID feedbackSoundID;
-        OSStatus err = AudioServicesCreateSystemSoundID((__bridge CFURLRef)audioFileURL, &feedbackSoundID);
-        if (err == noErr) {
-            AudioServicesPlaySystemSound(feedbackSoundID);
-        }
-        [NSThread sleepForTimeInterval:0.5];
-    } else {
-        usleep(15000);
-    }
+    usleep(15000);
 }
 
 @end

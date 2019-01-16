@@ -11,7 +11,6 @@ int main(int argc, const char * argv[]) {
             [NSDictionary cts_dictionaryWithCommandLineArguments:[NSProcessInfo processInfo].arguments];
         NSString * _Nullable const typeString = dictionary[@"type"] ?: dictionary[@"t"];
         NSString * _Nullable const directionString = dictionary[@"direction"] ?: dictionary[@"d"];
-        NSString * _Nullable const volumeFeedbackString = dictionary[@"volume-feedback"] ?: dictionary[@"f"];
 
         if (!typeString ||
             !directionString) {
@@ -30,18 +29,13 @@ int main(int argc, const char * argv[]) {
                   "              [Shift+Option] Small screen brightness adjustments.\n\n"
 
                   "  --direction=<dir>, -d <dir>\n"
-                  "        The direction of the change, either 0 or 1, where 0 is decrement, 1 is increment.\n\n"
-
-                  "  --volume-feedback=<bool>, -f <bool>\n"
-                  "        Optionally specify whether or not to play the volume feedback sound. See the modifier\n"
-                  "        key behavior for volume. If not specified, volume feedback sound will be played.\n\n",
+                  "        The direction of the change, either 0 or 1, where 0 is decrement, 1 is increment.\n\n",
                   stderr);
             return 1;
         }
 
         BOOL const isVolumeType = [typeString isEqualToString:@"volume"];
         BOOL const shouldIncrement = directionString.boolValue;
-        BOOL const isVolumeFeedbackEnabled = (volumeFeedbackString ? volumeFeedbackString.boolValue : YES);
 
         CTSControlStripControlType type;
         if (isVolumeType) {
@@ -54,7 +48,6 @@ int main(int argc, const char * argv[]) {
         NSWorkspace * const workspace = [NSWorkspace sharedWorkspace];
         CTSControlStripService * const service =
             [[CTSControlStripService alloc] initWithControlType:type
-                                          volumeFeedbackEnabled:isVolumeFeedbackEnabled
                                                   modifierFlags:modifierFlags
                                                       workspace:workspace];
         [service start];

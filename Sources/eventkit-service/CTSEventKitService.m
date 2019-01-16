@@ -208,7 +208,7 @@ static NSString * const kBetterTouchToolRefreshWidgetEndpoint = @"refresh_widget
                                                                            calendars:self.calendars];
     NSMutableArray<EKEvent *> * const eventsArray = [NSMutableArray array];
     [self.eventStore enumerateEventsMatchingPredicate:predicate usingBlock:^(EKEvent * const event, BOOL *stop) {
-        if (event.isVisible) {
+        if (event.isVisible && !event.isAllDay) {
             [eventsArray addObject:event];
         }
     }];

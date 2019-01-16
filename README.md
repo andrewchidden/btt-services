@@ -51,7 +51,7 @@ Usage: ./eventkit-service
 
 ### About
 
-Listens for volume changes from `AudioToolbox` and outputs a serialized device volume state.
+Listens for volume changes from `CoreAudio` and outputs a serialized device volume state.
 
 ### API
 
@@ -105,10 +105,6 @@ Usage: ./controlstrip-service
 
   --direction=<dir>, -d <dir>
         The direction of the change, either 0 or 1, where 0 is decrement, 1 is increment.
-
-  --volume-feedback=<bool>, -f <bool>
-        Optionally specify whether or not to play the volume feedback sound. See the modifier
-        key behavior for volume. If not specified, volume feedback sound will be played.
 ```
 
 ## Building from Source

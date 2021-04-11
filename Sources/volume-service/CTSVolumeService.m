@@ -99,7 +99,7 @@ static NSTimeInterval const kUpdateDebounceTimeInterval = 0.02;
         .mElement = kAudioObjectPropertyElementMaster,
         .mSelector = kAudioDevicePropertyMute,
     };
-    BOOL isMuted;
+    UInt32 isMuted;
     UInt32 isMutedSize = sizeof(isMuted);
 
     AudioHardwareServiceGetPropertyData(outputDeviceID,
@@ -108,7 +108,7 @@ static NSTimeInterval const kUpdateDebounceTimeInterval = 0.02;
                                         NULL,
                                         &isMutedSize,
                                         &isMuted);
-    return isMuted;
+    return (isMuted > 0);
 }
 
 - (int)outputVolume:(AudioDeviceID const)outputDeviceID
